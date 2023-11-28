@@ -55,7 +55,12 @@ def delete_account(username: str, password: str,):
                 return("Wrong password")
         else:
             return("Wrong username")            
-
+@app.get("/malmi")
+def malmi(name : str):
+    if name == "burak":
+        return 'yes'
+    else:
+        return 'no'
 @app.get("/randomtoken")
 def generate_random_code():
     code = ''.join(random.choices('acbd0123456789', k=10))
